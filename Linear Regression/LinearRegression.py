@@ -10,12 +10,10 @@ from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 
 #Read data from csv stored on Github
-rawData = pd.read_csv('https://raw.githubusercontent.com/EoinGohery/Neural-Networks/main/kc_house_data.csv', engine='python', error_bad_lines=False, sep=',')
-rawData.head()
+rawData = pd.read_csv('https://raw.githubusercontent.com/EoinGohery/Neural-Networks/master/Linear%20Regression/kc_house_data.csv', engine='python', error_bad_lines=False, sep=',')
 
 #Remove unwanted values
 rawData = rawData.drop(columns=["id","date","zipcode","lat","long","yr_renovated","sqft_living15", "sqft_lot15"])
-rawData
 
 #Visualise rawData
 sns.pairplot(rawData[['price', 'sqft_lot' , 'sqft_living', 'bedrooms']], diag_kind='kde')
@@ -27,7 +25,6 @@ Y = rawData.iloc[:,0].values
 #Normalise the input values within 0-1 
 min_max_scaler = preprocessing.MinMaxScaler()
 X_scale = min_max_scaler.fit_transform(X)
-X_scale
 
 #Remove comment from next line to use output normalisation
 #Y = np.interp(Y, (Y.min(), Y.max()), (0, +1))
