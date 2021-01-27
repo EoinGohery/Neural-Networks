@@ -10,7 +10,7 @@ from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 
 #Read data from csv stored on Github
-rawData = pd.read_csv('https://raw.githubusercontent.com/EoinGohery/LinearRegression/main/kc_house_data.csv', engine='python', error_bad_lines=False, sep=',')
+rawData = pd.read_csv('https://raw.githubusercontent.com/EoinGohery/Neural-Networks/main/kc_house_data.csv', engine='python', error_bad_lines=False, sep=',')
 rawData.head()
 
 #Remove unwanted values
